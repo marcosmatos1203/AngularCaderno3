@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    <mat-toolbar-row class="inicioTitulo">
+        <span class="titulo" >Caderno de Campo</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" >
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>how_to_reg</mat-icon>
+              <span>Produtor</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>how_to_reg</mat-icon>
+              <span>Agrônomo</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Sair</span>
+              </button>
+          </mat-menu>
+    </mat-toolbar-row> 
+</mat-toolbar>
