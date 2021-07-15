@@ -14,6 +14,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { HomeComponent } from './componentes/views/home/home.component';
 import {MatCardModule} from '@angular/material/card';
+import { ProdutorReadComponent } from './componentes/views/produtor/produtor-read/produtor-read.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -22,9 +24,11 @@ import {MatCardModule} from '@angular/material/card';
     CabecalhoComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    ProdutorReadComponent
   ],
   imports: [
+    MatTableModule,
     MatCardModule,
     MatListModule,
     BrowserModule,
