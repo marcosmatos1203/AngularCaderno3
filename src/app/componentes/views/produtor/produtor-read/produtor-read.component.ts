@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutorModel } from '../produtor.model';
+import { ProdutorService } from '../produtor.service';
 
 @Component({
   selector: 'app-produtor-read',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./produtor-read.component.css']
 })
 export class ProdutorReadComponent implements OnInit {
+  produtores:ProdutorModel[]=[]
 
-  constructor() { }
+  displayedColumns: string[] = ['id', 'nome', 'bairro_localidade', 'telefone2', 'acoes'];
+
+  constructor(private servico: ProdutorService) { }
 
   ngOnInit(): void {
+    this.getProdutores()
   }
-  displayedColumns: string[] = ['id', 'nome', 'bairro_localidade', 'telefone2', 'acoes'];
+  getProdutores(){
+    this.servico.getProdutores().subscribe(retorno=>{ 
+      console.log(retorno);
+      this.produtores = retorno;
+    })
+  }
 }
