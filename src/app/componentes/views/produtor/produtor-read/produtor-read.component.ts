@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProdutorModel } from '../produtor.model';
 import { ProdutorService } from '../produtor.service';
 
@@ -8,19 +9,22 @@ import { ProdutorService } from '../produtor.service';
   styleUrls: ['./produtor-read.component.css']
 })
 export class ProdutorReadComponent implements OnInit {
-  produtores:ProdutorModel[]=[]
+  produtores: ProdutorModel[] = []
 
   displayedColumns: string[] = ['id', 'nome', 'bairro_localidade', 'telefone2', 'acoes'];
 
-  constructor(private servico: ProdutorService) { }
+  constructor(private servico: ProdutorService, private rota: Router) { }
 
   ngOnInit(): void {
     this.getProdutores()
   }
-  getProdutores(){
-    this.servico.getProdutores().subscribe(retorno=>{ 
+  getProdutores() {
+    this.servico.getProdutores().subscribe(retorno => {
       console.log(retorno);
       this.produtores = retorno;
     })
+  }
+  NavegarNovoProdutor() {
+    this.rota.navigate(["produtor/create"])
   }
 }

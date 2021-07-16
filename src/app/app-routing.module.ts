@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componentes/views/home/home.component';
+import { ProdutorCreateComponent } from './componentes/views/produtor/produtor-create/produtor-create.component';
 import { ProdutorReadComponent } from './componentes/views/produtor/produtor-read/produtor-read.component';
 
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'produtor',
     component: ProdutorReadComponent
+  },
+  {
+    path: 'produtor/create',
+    component: ProdutorCreateComponent
   }
 ];
 

@@ -17,6 +17,12 @@ import {MatCardModule} from '@angular/material/card';
 import { ProdutorReadComponent } from './componentes/views/produtor/produtor-read/produtor-read.component';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { ProdutorCreateComponent } from './componentes/views/produtor/produtor-create/produtor-create.component';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -26,9 +32,15 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ProdutorReadComponent
+    ProdutorReadComponent,
+    ProdutorCreateComponent
   ],
   imports: [
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDividerModule,
     MatTableModule,
     MatCardModule,
     MatListModule,

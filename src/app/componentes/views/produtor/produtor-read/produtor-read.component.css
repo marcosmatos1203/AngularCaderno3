@@ -10,6 +10,21 @@
     font-size: 1.5rem;
     color: darkgray;
 }
+.botao{
+    margin-bottom: 1rem;
+}
 .table{
     width: 100%;
+}
+mat-icon{
+    padding-right: 1.5rem;
+}
+.edit{
+    color: blue;
+}
+.delete{
+    color: red;
+}
+.mat-header{
+    width: 6rem;
 }
