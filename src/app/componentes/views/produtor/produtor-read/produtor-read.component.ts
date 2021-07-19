@@ -17,12 +17,13 @@ export class ProdutorReadComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProdutores()
+    
   }
   getProdutores() {
-    this.servico.getProdutores().subscribe(retorno => {
-      console.log(retorno);
-      this.produtores = retorno;
-    })
+    this.servico.getProdutores().subscribe(
+      retorno => {
+        this.produtores = retorno;
+      })
   }
   NavegarNovoProdutor() {
     this.rota.navigate(["produtor/create"])

@@ -1,6 +1,6 @@
 .home{
     width: 95%;
-    margin: 1rem auto;
+    margin: 1rem auto auto auto;
 }
 @media (max-width:450px) {
     .home{
@@ -17,9 +17,9 @@
     text-align: center;
 }
 img{
-    height: 30rem;
+    height: 41rem;
 }
 .imagem{
-    height: 30rem;
+    height: 80%;
     text-align: center;
 }

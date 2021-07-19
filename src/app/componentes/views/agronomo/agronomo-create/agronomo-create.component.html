@@ -1,0 +1,55 @@
+
+<form>
+    <div>
+        <mat-card-title class="title">Dados Pessoais do Agrônomo</mat-card-title>
+    </div>
+    <mat-form-field class="form">
+        <mat-label>Nome:</mat-label>
+        <input matInput name="nome" placeholder="Ex. Matheus Vinicius" [(ngModel)]="agronomo.nome">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>e-mail:</mat-label>
+        <input matInput name="email" placeholder="Ex. matheusvinicius@gmail.com" [(ngModel)]="agronomo.email">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Logradouro:</mat-label>
+        <input matInput name="logradouro" placeholder="Ex. rua das goiabeiras" [(ngModel)]="agronomo.logradouro">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Bairro / Localidade:</mat-label>
+        <input matInput name="bairro" placeholder="Ex. Vila Esperança" [(ngModel)]="agronomo.bairro_localidade">
+    </mat-form-field>
+    <div class="telefone">
+        <mat-form-field class="formCrea">
+            <mat-label>CREA:</mat-label>
+            <input matInput name="crea" placeholder="88503-0" [(ngModel)]="agronomo.crea">
+        </mat-form-field>
+        <mat-form-field class="formCep">
+            <mat-label>Cep:</mat-label>
+            <input matInput name="cep" placeholder="88503-397" [(ngModel)]="agronomo.cep">
+        </mat-form-field>
+    </div>
+    <mat-form-field class="form">
+        <mat-label>Cidade:</mat-label>
+        <input matInput name="cidade" placeholder="Ex. São Joaquim" [(ngModel)]="agronomo.cidade">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Estado:</mat-label>
+        <input matInput name="estado" placeholder="Ex. Santa Catarina" [(ngModel)]="agronomo.estado">
+    </mat-form-field>
+    <div class="telefone">
+        <mat-form-field class="formT">
+            <mat-label>Telefone:</mat-label>
+            <input matInput name="telefone" placeholder="Ex. (49) 3223-2345" [(ngModel)]="agronomo.telefone1">
+        </mat-form-field>
+        <mat-form-field class="formC">
+            <mat-label>Celular:</mat-label>
+            <input matInput name="celular" placeholder="Ex. (49) 99931-5839" [(ngModel)]="agronomo.telefone2">
+        </mat-form-field>
+    </div>
+
+    <div class="botoes">
+        <button class="botao" mat-raised-button color="primary" (click)="addAgronomo()">Salvar</button>
+        <button class="botao" mat-raised-button color="warn">Cancelar</button>
+    </div>
+</form>

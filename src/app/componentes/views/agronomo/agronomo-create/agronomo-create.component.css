@@ -6,6 +6,14 @@ form{
 .form{
     width: 100%;
 }
+.formCrea{
+    margin :0 10% 0 0;
+    width: 45%;
+}
+.formCep{
+    padding-left: 0;
+    width: 45%;
+}
 
 .telefone{
     width: 100%;

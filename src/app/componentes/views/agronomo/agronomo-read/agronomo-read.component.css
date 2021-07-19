@@ -1,0 +1,26 @@
+.content{
+    width: 90%;
+    margin: 1.4rem auto auto auto;
+}
+.title{
+    text-align: center;
+    margin: 3rem auto 1rem auto;
+}
+.botao{
+    margin-bottom: 1rem;
+}
+.table{
+    width: 100%;
+}
+mat-icon{
+    padding-right: 1.5rem;
+}
+.edit{
+    color: blue;
+}
+.delete{
+    color: red;
+}
+.mat-header{
+    width: 6rem;
+}

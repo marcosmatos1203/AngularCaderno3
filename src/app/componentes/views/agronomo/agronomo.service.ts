@@ -3,23 +3,23 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ProdutorModel } from './produtor.model';
+import { AgronomoModel } from './agronomo.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProdutorService {
+export class AgronomoService {
 
-  constructor(private http: HttpClient, private snack: MatSnackBar) { }
+  constructor(private http: HttpClient, private snack:MatSnackBar) { }
   baseUrl: string = environment.UrlBase;
 
-  getProdutores(): Observable<ProdutorModel[]> {
-    const url = `${this.baseUrl}produtores`
-    return this.http.get<ProdutorModel[]>(url)
+  getAgronomos(): Observable<AgronomoModel[]> {
+    const url = `${this.baseUrl}resp-tecnico`;
+    return this.http.get<AgronomoModel[]>(url);
   }
-  addProdutor(produtor: ProdutorModel): Observable<ProdutorModel> {
-    const url = `${this.baseUrl}produtores`
-    return this.http.post<ProdutorModel>(url, produtor);
+  addAgronomo(agronomo: AgronomoModel): Observable<AgronomoModel> {
+    const url = `${this.baseUrl}resp-tecnico`
+    return this.http.post<AgronomoModel>(url, agronomo);
   }
   mensagem(str: string): void {
     this.snack.open(`${str}`, 'OK', {
@@ -29,4 +29,3 @@ export class ProdutorService {
     })
   }
 }
-
