@@ -17,9 +17,17 @@ export class AgronomoService {
     const url = `${this.baseUrl}resp-tecnico`;
     return this.http.get<AgronomoModel[]>(url);
   }
+  getAgronomoPorId(id:number): Observable<AgronomoModel> {
+    const url = `${this.baseUrl}resp-tecnico/${id}`;
+    return this.http.get<AgronomoModel>(url);
+  }
   addAgronomo(agronomo: AgronomoModel): Observable<AgronomoModel> {
     const url = `${this.baseUrl}resp-tecnico`
     return this.http.post<AgronomoModel>(url, agronomo);
+  }
+  deleteAgronomo(id: number): Observable<void> {
+    const url = `${this.baseUrl}resp-tecnico/${id}`
+    return this.http.delete<void>(url);
   }
   mensagem(str: string): void {
     this.snack.open(`${str}`, 'OK', {

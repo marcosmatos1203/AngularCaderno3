@@ -26,6 +26,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AgronomoReadComponent } from './componentes/views/agronomo/agronomo-read/agronomo-read.component';
 import { AgronomoCreateComponent } from './componentes/views/agronomo/agronomo-create/agronomo-create.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ProdutorDeleteComponent } from './componentes/views/produtor/produtor-delete/produtor-delete.component';
+import { AgronomoDeleteComponent } from './componentes/views/agronomo/agronomo-delete/agronomo-delete.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ProdutorReadComponent,
     ProdutorCreateComponent,
     AgronomoReadComponent,
-    AgronomoCreateComponent
+    AgronomoCreateComponent,
+    ProdutorDeleteComponent,
+    AgronomoDeleteComponent
   ],
   imports: [
     MatSnackBarModule,

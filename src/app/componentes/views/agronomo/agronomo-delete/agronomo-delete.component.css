@@ -1,0 +1,36 @@
+form{
+    text-align: center;
+    width: 70%;
+    margin: 2rem auto 0 auto;
+}
+.form{
+    width: 100%;
+}
+.formCrea{
+    margin :0 10% 0 0;
+    width: 45%;
+}
+.formCep{
+    padding-left: 0;
+    width: 45%;
+}
+
+.telefone{
+    width: 100%;
+}
+.formT{
+    margin :0 10% 0 0;
+    width: 45%;
+}
+.formC{
+    padding-left: 0;
+    width: 45%;
+}
+.botoes{
+    width: 100%;
+    text-align: center;
+}
+.botao{
+    margin :.5rem 1rem 0 1rem;
+    width: 20%;
+}
