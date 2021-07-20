@@ -29,6 +29,10 @@ export class ProdutorService {
     const url = `${this.baseUrl}produtores/${id}`
     return this.http.delete<void>(url);
   }
+  updateProdutor(produtor:ProdutorModel): Observable<void> {
+    const url = `${this.baseUrl}produtores/${produtor.IDProdutor}`
+    return this.http.patch<void>(url,produtor);
+  }
   mensagem(str: string): void {
     this.snack.open(`${str}`, 'OK', {
       horizontalPosition: 'end',

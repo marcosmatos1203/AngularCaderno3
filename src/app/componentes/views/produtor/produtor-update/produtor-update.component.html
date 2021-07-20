@@ -1,0 +1,48 @@
+<form>
+    <div>
+        <mat-card-title class="title">Atualizar Produtor</mat-card-title>
+    </div>
+    <mat-form-field class="form">
+        <mat-label>Nome:</mat-label>
+        <input matInput name="nome" placeholder="Ex. Matheus Vinicius" [(ngModel)]="produtor.nome">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>e-mail:</mat-label>
+        <input matInput name="email" placeholder="Ex. matheusvinicius@gmail.com" [(ngModel)]="produtor.email">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Logradouro:</mat-label>
+        <input matInput name="logradouro" placeholder="Ex. rua das goiabeiras" [(ngModel)]="produtor.logradouro">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Bairro / Localidade:</mat-label>
+        <input matInput name="bairro" placeholder="Ex. Vila Esperança" [(ngModel)]="produtor.bairro_localidade">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Cep:</mat-label>
+        <input matInput name="cep" placeholder="88503-397" [(ngModel)]="produtor.cep">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Cidade:</mat-label>
+        <input matInput name="cidade" placeholder="Ex. São Joaquim" [(ngModel)]="produtor.cidade">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Estado:</mat-label>
+        <input matInput name="estado" placeholder="Ex. Santa Catarina" [(ngModel)]="produtor.estado">
+    </mat-form-field>
+    <div class="telefone">
+        <mat-form-field class="formT">
+            <mat-label>Telefone:</mat-label>
+            <input matInput name="telefone" placeholder="Ex. (49) 3223-2345" [(ngModel)]="produtor.telefone1">
+        </mat-form-field>
+        <mat-form-field class="formC">
+            <mat-label>Celular:</mat-label>
+            <input matInput name="celular" placeholder="Ex. (49) 99931-5839" [(ngModel)]="produtor.telefone2">
+        </mat-form-field>
+    </div>
+    
+    <div class="botoes">
+        <button class="botao" mat-raised-button color="primary" (click)="updateProdutor()">Atualizar</button>
+        <button class="botao" mat-raised-button color="warn" routerLink="/produtor">Cancelar</button>
+    </div>
+</form>

@@ -4,11 +4,11 @@ import { ProdutorModel } from '../produtor.model';
 import { ProdutorService } from '../produtor.service';
 
 @Component({
-  selector: 'app-produtor-delete',
-  templateUrl: './produtor-delete.component.html',
-  styleUrls: ['./produtor-delete.component.css']
+  selector: 'app-produtor-update',
+  templateUrl: './produtor-update.component.html',
+  styleUrls: ['./produtor-update.component.css']
 })
-export class ProdutorDeleteComponent implements OnInit {
+export class ProdutorUpdateComponent implements OnInit {
   produtor: ProdutorModel = {
     IDProdutor: 0,
     nome: "",
@@ -21,15 +21,13 @@ export class ProdutorDeleteComponent implements OnInit {
     telefone1: "",
     telefone2: "",
   }
-
-  constructor(private servico: ProdutorService, private lblRota: ActivatedRoute, private rota: Router) { }
+  constructor(private servico: ProdutorService, private rota:Router, private lblrota:ActivatedRoute) { }
 
   ngOnInit(): void {
-
-    this.produtor.IDProdutor = parseInt(this.lblRota.snapshot.paramMap.get('id')!);
+    this.produtor.IDProdutor=parseInt(this.lblrota.snapshot.paramMap.get('id')!);
     this.getProdutorPorId();
   }
-  getProdutorPorId(): void {
+  getProdutorPorId():void{
     this.servico.getProdutorPorId(this.produtor.IDProdutor!).subscribe(
       (resposta) => {
         this.produtor.IDProdutor = resposta.IDProdutor;
@@ -41,15 +39,14 @@ export class ProdutorDeleteComponent implements OnInit {
         this.produtor.cep = resposta.cep;
         this.produtor.email = resposta.email;
         this.produtor.telefone1 = resposta.telefone1;
-        this.produtor.telefone2 = resposta.telefone2;
-      })
+        this.produtor.telefone2 = resposta.telefone2;      
+      });
   }
-  deletarProdutor(): void {
-    this.servico.deleteProdutor(this.produtor.IDProdutor!).subscribe(
+  updateProdutor(): void {
+    this.servico.updateProdutor(this.produtor).subscribe(
       (resposta) => {
-        this.rota.navigate(['produtor']);
-        this.servico.mensagem("Produtor Excluído");
-      }
-    )
+        this.rota.navigate(['/produtor']);
+        this.servico.mensagem("Produtor atualizado")
+      })
   }
 }
