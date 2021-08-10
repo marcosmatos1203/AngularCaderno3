@@ -26,9 +26,9 @@ export class AgronomoDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     this.agronomo.IDRespTecnico = parseInt(this.lblRota.snapshot.paramMap.get('id')!);
-    this.getProdutorPorId();
+    this.getAgronomoPorId();
   }
-  getProdutorPorId(): void {
+  getAgronomoPorId(): void {
     this.servico.getAgronomoPorId(this.agronomo.IDRespTecnico!).subscribe(
       (resposta) => {
         this.agronomo.IDRespTecnico = resposta.IDRespTecnico;

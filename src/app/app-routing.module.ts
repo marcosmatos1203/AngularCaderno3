@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AgronomoCreateComponent } from './componentes/views/agronomo/agronomo-create/agronomo-create.component';
 import { AgronomoDeleteComponent } from './componentes/views/agronomo/agronomo-delete/agronomo-delete.component';
 import { AgronomoReadComponent } from './componentes/views/agronomo/agronomo-read/agronomo-read.component';
+import { AgronomoUpdateComponent } from './componentes/views/agronomo/agronomo-update/agronomo-update.component';
 import { HomeComponent } from './componentes/views/home/home.component';
 import { ProdutorCreateComponent } from './componentes/views/produtor/produtor-create/produtor-create.component';
 import { ProdutorDeleteComponent } from './componentes/views/produtor/produtor-delete/produtor-delete.component';
 import { ProdutorReadComponent } from './componentes/views/produtor/produtor-read/produtor-read.component';
+import { ProdutorUpdateComponent } from './componentes/views/produtor/produtor-update/produtor-update.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,10 @@ const routes: Routes = [
     component: ProdutorDeleteComponent
   },
   {
+    path: 'produtor/update/:id',
+    component: ProdutorUpdateComponent
+  },
+  {
     path: 'agronomo',
     component: AgronomoReadComponent
   },
@@ -36,6 +42,11 @@ const routes: Routes = [
   {
     path: 'agronomo/delete/:id',
     component: AgronomoDeleteComponent
+  }
+  ,
+  {
+    path: 'agronomo/update/:id',
+    component: AgronomoUpdateComponent
   }
 ];
 

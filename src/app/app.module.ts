@@ -28,6 +28,8 @@ import { AgronomoCreateComponent } from './componentes/views/agronomo/agronomo-c
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ProdutorDeleteComponent } from './componentes/views/produtor/produtor-delete/produtor-delete.component';
 import { AgronomoDeleteComponent } from './componentes/views/agronomo/agronomo-delete/agronomo-delete.component';
+import { AgronomoUpdateComponent } from './componentes/views/agronomo/agronomo-update/agronomo-update.component';
+import { ProdutorUpdateComponent } from './componentes/views/produtor/produtor-update/produtor-update.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { AgronomoDeleteComponent } from './componentes/views/agronomo/agronomo-d
     AgronomoReadComponent,
     AgronomoCreateComponent,
     ProdutorDeleteComponent,
-    AgronomoDeleteComponent
+    AgronomoDeleteComponent,
+    AgronomoUpdateComponent,
+    ProdutorUpdateComponent
   ],
   imports: [
     MatSnackBarModule,
