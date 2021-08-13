@@ -26,6 +26,6 @@ export class AgronomoReadComponent implements OnInit {
       })
   }
   NavegarNovoAgronomo() {
-    this.rota.navigate(["agronomo/create"])
+    this.rota.navigate(["responsavelTecnico/create"])
   }
 }

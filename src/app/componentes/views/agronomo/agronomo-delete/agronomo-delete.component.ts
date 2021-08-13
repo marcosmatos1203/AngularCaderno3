@@ -47,8 +47,8 @@ export class AgronomoDeleteComponent implements OnInit {
   deleteAgronomo(): void {
     this.servico.deleteAgronomo(this.agronomo.IDRespTecnico!).subscribe(
       (resposta) => {
-        this.rota.navigate(['agronomo']);
-        this.servico.mensagem("Agrônomo excluído com sucesso")
+        this.rota.navigate(['responsavelTecnico']);
+        this.servico.mensagem("Responsável Técnico excluído com sucesso")
       }
     )
   }

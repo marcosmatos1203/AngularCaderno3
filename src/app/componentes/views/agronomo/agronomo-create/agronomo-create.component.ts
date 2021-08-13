@@ -28,9 +28,8 @@ agronomo:AgronomoModel={
   addAgronomo(): void {
     this.servico.addAgronomo(this.agronomo).subscribe(
       (resposta) => {
-        this.rota.navigate(['agronomo'])
-        this.servico.mensagem("Agronomo cadastrado com sucesso");
-      
+        this.rota.navigate(['responsavelTecnico']);
+        this.servico.mensagem("Responsável Técnico cadastrado com sucesso");
       });
   }
 }

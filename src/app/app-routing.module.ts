@@ -32,20 +32,20 @@ const routes: Routes = [
     component: ProdutorUpdateComponent
   },
   {
-    path: 'agronomo',
+    path: 'responsavelTecnico',
     component: AgronomoReadComponent
   },
   {
-    path: 'agronomo/create',
+    path: 'responsavelTecnico/create',
     component: AgronomoCreateComponent
   },
   {
-    path: 'agronomo/delete/:id',
+    path: 'responsavelTecnico/delete/:id',
     component: AgronomoDeleteComponent
   }
   ,
   {
-    path: 'agronomo/update/:id',
+    path: 'responsavelTecnico/update/:id',
     component: AgronomoUpdateComponent
   }
 ];

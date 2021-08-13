@@ -47,8 +47,8 @@ export class AgronomoUpdateComponent implements OnInit {
   updateAgronomo(): void {
     this.servico.updateAgronomo(this.agronomo).subscribe(
       (resposta) => {
-        this.rota.navigate(['/agronomo']);
-        this.servico.mensagem("Agrônomo atualizado")
+        this.rota.navigate(['/responsavelTecnico']);
+        this.servico.mensagem("Responsável Técnico atualizado")
       })
   }
 }
