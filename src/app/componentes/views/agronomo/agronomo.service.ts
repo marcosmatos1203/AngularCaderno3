@@ -14,23 +14,23 @@ export class AgronomoService {
   baseUrl: string = environment.UrlBase;
 
   getAgronomos(): Observable<AgronomoModel[]> {
-    const url = `${this.baseUrl}resp-tecnico`;
+    const url = `${this.baseUrl}respTecnico`;
     return this.http.get<AgronomoModel[]>(url);
   }
   getAgronomoPorId(id:number): Observable<AgronomoModel> {
-    const url = `${this.baseUrl}resp-tecnico/${id}`;
+    const url = `${this.baseUrl}respTecnico/${id}`;
     return this.http.get<AgronomoModel>(url);
   }
   addAgronomo(agronomo: AgronomoModel): Observable<AgronomoModel> {
-    const url = `${this.baseUrl}resp-tecnico`
+    const url = `${this.baseUrl}respTecnico`
     return this.http.post<AgronomoModel>(url, agronomo);
   }
   deleteAgronomo(id: number): Observable<void> {
-    const url = `${this.baseUrl}resp-tecnico/${id}`
+    const url = `${this.baseUrl}respTecnico/${id}`
     return this.http.delete<void>(url);
   }
   updateAgronomo(agronomo:AgronomoModel): Observable<void> {
-    const url = `${this.baseUrl}resp-tecnico/${agronomo.IDRespTecnico}`
+    const url = `${this.baseUrl}respTecnico/${agronomo.IDRespTecnico}`
     return this.http.patch<void>(url,agronomo);
   }
   mensagem(str: string): void {
