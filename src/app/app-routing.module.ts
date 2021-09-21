@@ -5,9 +5,11 @@ import { AgronomoDeleteComponent } from './componentes/views/agronomo/agronomo-d
 import { AgronomoReadComponent } from './componentes/views/agronomo/agronomo-read/agronomo-read.component';
 import { AgronomoUpdateComponent } from './componentes/views/agronomo/agronomo-update/agronomo-update.component';
 import { HomeComponent } from './componentes/views/home/home.component';
+import { PomarReadComponent } from './componentes/views/pomar/pomar-read/pomar-read.component';
 import { ProdutorCreateComponent } from './componentes/views/produtor/produtor-create/produtor-create.component';
 import { ProdutorDeleteComponent } from './componentes/views/produtor/produtor-delete/produtor-delete.component';
 import { ProdutorReadComponent } from './componentes/views/produtor/produtor-read/produtor-read.component';
+import { ProdutorSelectComponent } from './componentes/views/produtor/produtor-select/produtor-select.component';
 import { ProdutorUpdateComponent } from './componentes/views/produtor/produtor-update/produtor-update.component';
 
 const routes: Routes = [
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'produtor/create',
     component: ProdutorCreateComponent
+  },
+  {
+    path: 'produtor/select',
+    component: ProdutorSelectComponent
+  },
+  {
+    path: 'produtor/select/:id',
+    component: PomarReadComponent
   },
   {
     path: 'produtor/delete/:id',
@@ -42,11 +52,14 @@ const routes: Routes = [
   {
     path: 'responsavelTecnico/delete/:id',
     component: AgronomoDeleteComponent
-  }
-  ,
+  },
   {
     path: 'responsavelTecnico/update/:id',
     component: AgronomoUpdateComponent
+  },
+  {
+    path: 'pomar',
+    component: PomarReadComponent
   }
 ];
 

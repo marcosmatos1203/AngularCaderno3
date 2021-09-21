@@ -19,6 +19,7 @@ import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ProdutorCreateComponent } from './componentes/views/produtor/produtor-create/produtor-create.component';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule} from '@angular/material/input';
@@ -30,6 +31,8 @@ import { ProdutorDeleteComponent } from './componentes/views/produtor/produtor-d
 import { AgronomoDeleteComponent } from './componentes/views/agronomo/agronomo-delete/agronomo-delete.component';
 import { AgronomoUpdateComponent } from './componentes/views/agronomo/agronomo-update/agronomo-update.component';
 import { ProdutorUpdateComponent } from './componentes/views/produtor/produtor-update/produtor-update.component';
+import { PomarReadComponent } from './componentes/views/pomar/pomar-read/pomar-read.component';
+import { ProdutorSelectComponent } from './componentes/views/produtor/produtor-select/produtor-select.component';
 
 
 @NgModule({
@@ -46,7 +49,9 @@ import { ProdutorUpdateComponent } from './componentes/views/produtor/produtor-u
     ProdutorDeleteComponent,
     AgronomoDeleteComponent,
     AgronomoUpdateComponent,
-    ProdutorUpdateComponent
+    ProdutorUpdateComponent,
+    PomarReadComponent,
+    ProdutorSelectComponent
   ],
   imports: [
     MatSnackBarModule,
@@ -65,7 +70,8 @@ import { ProdutorUpdateComponent } from './componentes/views/produtor/produtor-u
     MatMenuModule,
     MatIconModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

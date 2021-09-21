@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { PomarModel } from '../pomar/pomar.model';
 import { ProdutorModel } from './produtor.model';
 
 @Injectable({
@@ -20,6 +21,10 @@ export class ProdutorService {
   getProdutorPorId(id: number): Observable<ProdutorModel> {
     const url = `${this.baseUrl}produtores/${id}`
     return this.http.get<ProdutorModel>(url)
+  }
+  getPomarPorIdProdutor(id: number): Observable<PomarModel> {
+    const url = `${this.baseUrl}produtores/${id}`
+    return this.http.get<PomarModel>(url)
   }
   addProdutor(produtor: ProdutorModel): Observable<ProdutorModel> {
     const url = `${this.baseUrl}produtores`
