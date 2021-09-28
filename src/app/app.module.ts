@@ -21,7 +21,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ProdutorCreateComponent } from './componentes/views/produtor/produtor-create/produtor-create.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AgronomoReadComponent } from './componentes/views/agronomo/agronomo-read/agronomo-read.component';
@@ -33,6 +33,9 @@ import { AgronomoUpdateComponent } from './componentes/views/agronomo/agronomo-u
 import { ProdutorUpdateComponent } from './componentes/views/produtor/produtor-update/produtor-update.component';
 import { PomarReadComponent } from './componentes/views/pomar/pomar-read/pomar-read.component';
 import { ProdutorSelectComponent } from './componentes/views/produtor/produtor-select/produtor-select.component';
+import { PomarCreateComponent } from './componentes/views/pomar/pomar-create/pomar-create.component';
+import { MatSelectModule } from '@angular/material/select';
+import { PomarUpdateComponent } from './componentes/views/pomar/pomar-update/pomar-update.component';
 
 
 @NgModule({
@@ -51,7 +54,10 @@ import { ProdutorSelectComponent } from './componentes/views/produtor/produtor-s
     AgronomoUpdateComponent,
     ProdutorUpdateComponent,
     PomarReadComponent,
-    ProdutorSelectComponent
+    ProdutorSelectComponent,
+    PomarCreateComponent,
+    PomarUpdateComponent,
+    
   ],
   imports: [
     MatSnackBarModule,
@@ -71,7 +77,9 @@ import { ProdutorSelectComponent } from './componentes/views/produtor/produtor-s
     MatIconModule,
     MatSidenavModule,
     HttpClientModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

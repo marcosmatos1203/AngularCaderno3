@@ -23,16 +23,16 @@ export class PomarService {
     return this.http.get<PomarModel[]>(url);
   }
   getPomaresPorIdProdutor(idProdutor: number):Observable<PomarModel[]>{
-    const url = `${this.baseUrl}produtores/${idProdutor}`
+    const url = `${this.baseUrl}pomar/produtor/${idProdutor}`
     return this.http.get<PomarModel[]>(url);
   }
   getPomarPorId(id: number): Observable<PomarModel> {
     const url = `${this.baseUrl}pomar/${id}`
     return this.http.get<PomarModel>(url)
   }
-  addPomar(produtor: PomarModel): Observable<PomarModel> {
+  addPomar(pomar: PomarModel): Observable<PomarModel> {
     const url = `${this.baseUrl}pomar`
-    return this.http.post<PomarModel>(url, produtor);
+    return this.http.post<PomarModel>(url, pomar);
   }
   deletePomar(id: number): Observable<void> {
     const url = `${this.baseUrl}pomar/${id}`

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  UrlBase:'https://caderno-de-campo-nestjs.herokuapp.com/'
+  UrlBase:'https://caderno-campo.herokuapp.com/'
 };
 
 /*

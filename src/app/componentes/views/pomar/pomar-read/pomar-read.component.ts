@@ -12,7 +12,8 @@ import { PomarService } from '../pomar.service';
   styleUrls: ['./pomar-read.component.css']
 })
 export class PomarReadComponent implements OnInit {
-  produtor: ProdutorModel = {
+
+  produtor:ProdutorModel={
     IDProdutor: 0,
     nome: "",
     logradouro: "",
@@ -24,51 +25,32 @@ export class PomarReadComponent implements OnInit {
     telefone1: "",
     telefone2: "",
   }
-  pomar: PomarModel = {
-    IDPomar: 0,
-    nome: "",
-    logradouro: "",
-    bairro_localidade: "",
-    cidade: "",
-    estado: "",
-    cep: "",
-    telefone2: "",
-  }
-
   pomares:PomarModel[]=[];
+idParametro:number=0;
   displayedColumns: string[] = ['id', 'nome', 'bairro_localidade', 'cidade', 'respTecnico', 'acoes'];
 
   constructor(private servicoProdutor: ProdutorService, private servicoPomar: PomarService, private lblRota: ActivatedRoute, private rota: Router) { }
 
   ngOnInit(): void {
-    this.produtor.IDProdutor = parseInt(this.lblRota.snapshot.paramMap.get('id')!);
-    this.getPomarPorIdProdutor();
+    this.idParametro = parseInt(this.lblRota.snapshot.paramMap.get('id')!);
+    this.getProdutor();
+    this.getPomaresPorProdutor();
   }
-  getProdutores() {
-    this.servicoProdutor.getProdutores().subscribe(
+  getProdutor() {
+    this.servicoProdutor.getProdutorPorId(this.idParametro).subscribe(
       retorno => {
+        console.log(retorno);
+        this.produtor = retorno;
+      })
+  }
+  getPomaresPorProdutor() {
+    this.servicoPomar.getPomaresPorIdProdutor(this.idParametro).subscribe(
+      retorno => {
+        console.log(retorno);
         this.pomares = retorno;
       })
   }
-  getPomarPorIdProdutor() {
-    this.servicoProdutor.getPomarPorIdProdutor(this.produtor.IDProdutor!).subscribe(
-      resposta => {
-
-        this.pomar.IDPomar = resposta.IDPomar;
-        this.pomar.nome = resposta.nome;
-        this.pomar.logradouro = resposta.logradouro;
-        this.pomar.bairro_localidade = resposta.bairro_localidade;
-        this.pomar.cidade = resposta.cidade;
-        this.pomar.estado = resposta.estado;
-        this.pomar.cep = resposta.cep;
-        this.pomar.telefone2 = resposta.telefone2;
-
-
-        this.pomar = resposta;
-      })
-  }
-
   NavegarNovoPomar() {
-    this.rota.navigate(["pomar/create"])
+    this.rota.navigate(["pomar/create/"+this.produtor.IDProdutor])
   }
 }

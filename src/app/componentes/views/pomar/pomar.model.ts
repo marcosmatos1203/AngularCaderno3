@@ -11,5 +11,4 @@ export interface PomarModel {
     cep: string;
     Produtor?:ProdutorModel;
     RespTecnico?: AgronomoModel;
-    telefone2: string;
 }

@@ -22,9 +22,9 @@ export class ProdutorService {
     const url = `${this.baseUrl}produtores/${id}`
     return this.http.get<ProdutorModel>(url)
   }
-  getPomarPorIdProdutor(id: number): Observable<PomarModel> {
+  getPomarPorIdProdutor(id: number): Observable<PomarModel[]> {
     const url = `${this.baseUrl}produtores/${id}`
-    return this.http.get<PomarModel>(url)
+    return this.http.get<PomarModel[]>(url)
   }
   addProdutor(produtor: ProdutorModel): Observable<ProdutorModel> {
     const url = `${this.baseUrl}produtores`

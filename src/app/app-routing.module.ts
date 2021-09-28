@@ -5,6 +5,7 @@ import { AgronomoDeleteComponent } from './componentes/views/agronomo/agronomo-d
 import { AgronomoReadComponent } from './componentes/views/agronomo/agronomo-read/agronomo-read.component';
 import { AgronomoUpdateComponent } from './componentes/views/agronomo/agronomo-update/agronomo-update.component';
 import { HomeComponent } from './componentes/views/home/home.component';
+import { PomarCreateComponent } from './componentes/views/pomar/pomar-create/pomar-create.component';
 import { PomarReadComponent } from './componentes/views/pomar/pomar-read/pomar-read.component';
 import { ProdutorCreateComponent } from './componentes/views/produtor/produtor-create/produtor-create.component';
 import { ProdutorDeleteComponent } from './componentes/views/produtor/produtor-delete/produtor-delete.component';
@@ -26,11 +27,11 @@ const routes: Routes = [
     component: ProdutorCreateComponent
   },
   {
-    path: 'produtor/select',
+    path: 'pomarProdutor',
     component: ProdutorSelectComponent
   },
   {
-    path: 'produtor/select/:id',
+    path: 'pomarProdutor/:id',
     component: PomarReadComponent
   },
   {
@@ -60,7 +61,11 @@ const routes: Routes = [
   {
     path: 'pomar',
     component: PomarReadComponent
-  }
+  },
+  {
+    path: 'pomar/create/:id',
+    component: PomarCreateComponent
+  },
 ];
 
 @NgModule({
