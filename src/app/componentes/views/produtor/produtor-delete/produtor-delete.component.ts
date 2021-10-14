@@ -10,7 +10,7 @@ import { ProdutorService } from '../produtor.service';
 })
 export class ProdutorDeleteComponent implements OnInit {
   produtor: ProdutorModel = {
-    IDProdutor: 0,
+    id: 0,
     nome: "",
     logradouro: "",
     bairro_localidade: "",
@@ -26,13 +26,13 @@ export class ProdutorDeleteComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.produtor.IDProdutor = parseInt(this.lblRota.snapshot.paramMap.get('id')!);
+    this.produtor.id = parseInt(this.lblRota.snapshot.paramMap.get('id')!);
     this.getProdutorPorId();
   }
   getProdutorPorId(): void {
-    this.servico.getProdutorPorId(this.produtor.IDProdutor!).subscribe(
+    this.servico.getProdutorPorId(this.produtor.id!).subscribe(
       (resposta) => {
-        this.produtor.IDProdutor = resposta.IDProdutor;
+        this.produtor.id = resposta.id;
         this.produtor.nome = resposta.nome;
         this.produtor.logradouro = resposta.logradouro;
         this.produtor.bairro_localidade = resposta.bairro_localidade;
@@ -45,7 +45,7 @@ export class ProdutorDeleteComponent implements OnInit {
       })
   }
   deletarProdutor(): void {
-    this.servico.deleteProdutor(this.produtor.IDProdutor!).subscribe(
+    this.servico.deleteProdutor(this.produtor.id!).subscribe(
       (resposta) => {
         this.rota.navigate(['produtor']);
         this.servico.mensagem("Produtor Excluído");

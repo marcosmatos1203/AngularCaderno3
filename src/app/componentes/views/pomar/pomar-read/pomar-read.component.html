@@ -13,7 +13,7 @@
 
             <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef> ID </th>
-                <td mat-cell *matCellDef="let row"> {{row.IDPomar}} </td>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
             </ng-container>
 
             <ng-container matColumnDef="nome">
@@ -31,20 +31,15 @@
                 <td mat-cell *matCellDef="let row"> {{row.cidade}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="respTecnico">
-                <th mat-header-cell *matHeaderCellDef> RESP. TÉCNICO </th>
-                <td mat-cell *matCellDef="let row"> {{row.respTecnico.nome}} </td>
-            </ng-container>
-
             <ng-container matColumnDef="acoes">
                 <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
                 <td mat-cell *matCellDef="let row">
-                    <a class="edit" routerLink="update/{{row.IDPomar}}">
+                    <a class="edit" routerLink="update/{{row.id}}">
                         <button mat-icon-button>
                             <mat-icon>edit</mat-icon>
                         </button>
                     </a>
-                    <a class="delete" routerLink="delete/{{row.IDPomar}}">
+                    <a class="delete" routerLink="delete/{{row.id}}">
                         <button mat-icon-button>
                             <mat-icon>delete</mat-icon>
                         </button>

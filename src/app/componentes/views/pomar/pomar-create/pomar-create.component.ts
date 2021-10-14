@@ -26,7 +26,7 @@ export class PomarCreateComponent implements OnInit {
 
 
   produtorSelecionado: ProdutorModel = {
-    IDProdutor: 0,
+    id: 0,
     nome: "",
     logradouro: "",
     bairro_localidade: "",
@@ -38,7 +38,7 @@ export class PomarCreateComponent implements OnInit {
     telefone2: "",
   }
   respTecnicoSelecionado: AgronomoModel = {
-    IDRespTecnico: 0,
+    id: 0,
     nome: "",
     logradouro: "",
     bairro_localidade: "",
@@ -63,7 +63,7 @@ export class PomarCreateComponent implements OnInit {
   constructor(private lblRota: ActivatedRoute, private servicoRespTecnico: AgronomoService, private servicoProdutor: ProdutorService, private servicoPomar: PomarService, private rota: Router) { }
 
   ngOnInit(): void {
-    this.produtorSelecionado.IDProdutor = parseInt(this.lblRota.snapshot.paramMap.get('id')!);
+    this.produtorSelecionado.id = parseInt(this.lblRota.snapshot.paramMap.get('id')!);
     this.getProdutorPorId();
     this.getAgronomos();
   }
@@ -74,9 +74,9 @@ export class PomarCreateComponent implements OnInit {
       })
   }
   getAgronomoPorId(): void {
-    this.servicoRespTecnico.getAgronomoPorId(this.respTecnicoSelecionado.IDRespTecnico!).subscribe(
+    this.servicoRespTecnico.getAgronomoPorId(this.respTecnicoSelecionado.id!).subscribe(
       (resposta) => {
-        this.respTecnicoSelecionado.IDRespTecnico = resposta.IDRespTecnico;
+        this.respTecnicoSelecionado.id = resposta.id;
         this.respTecnicoSelecionado.nome = resposta.nome;
         this.respTecnicoSelecionado.logradouro = resposta.logradouro;
         this.respTecnicoSelecionado.bairro_localidade = resposta.bairro_localidade;
@@ -91,10 +91,10 @@ export class PomarCreateComponent implements OnInit {
   }
 
   getProdutorPorId(): void {
-    this.servicoProdutor.getProdutorPorId(this.produtorSelecionado.IDProdutor!).subscribe(
+    this.servicoProdutor.getProdutorPorId(this.produtorSelecionado.id!).subscribe(
       (resposta) => {
         console.log(resposta);
-        this.produtorSelecionado.IDProdutor = resposta.IDProdutor;
+        this.produtorSelecionado.id = resposta.id;
         this.produtorSelecionado.nome = resposta.nome;
         this.produtorSelecionado.logradouro = resposta.logradouro;
         this.produtorSelecionado.bairro_localidade = resposta.bairro_localidade;
@@ -116,8 +116,8 @@ export class PomarCreateComponent implements OnInit {
   addPomarProdutor(): void {
     this.servicoPomar.addPomar(this.pomar).subscribe(
       (resposta) => {
-        this.rota.navigate(['pomarProdutor/'+this.produtorSelecionado.IDProdutor!])
-        this.servicoPomar.mensagem("Produtor cadastrado com sucesso");
+        this.rota.navigate(['pomarProdutor/'+this.produtorSelecionado.id!])
+        this.servicoPomar.mensagem("Pomar cadastrado com sucesso");
       
       });
   }

@@ -10,7 +10,7 @@ import { AgronomoService } from '../agronomo.service';
 })
 export class AgronomoDeleteComponent implements OnInit {
   agronomo: AgronomoModel = {
-    IDRespTecnico: 0,
+    id: 0,
     nome: '',
     logradouro: '',
     bairro_localidade: '',
@@ -25,13 +25,13 @@ export class AgronomoDeleteComponent implements OnInit {
   constructor(private servico: AgronomoService, private lblRota: ActivatedRoute, private rota: Router) { }
 
   ngOnInit(): void {
-    this.agronomo.IDRespTecnico = parseInt(this.lblRota.snapshot.paramMap.get('id')!);
+    this.agronomo.id = parseInt(this.lblRota.snapshot.paramMap.get('id')!);
     this.getAgronomoPorId();
   }
   getAgronomoPorId(): void {
-    this.servico.getAgronomoPorId(this.agronomo.IDRespTecnico!).subscribe(
+    this.servico.getAgronomoPorId(this.agronomo.id!).subscribe(
       (resposta) => {
-        this.agronomo.IDRespTecnico = resposta.IDRespTecnico;
+        this.agronomo.id = resposta.id;
         this.agronomo.nome = resposta.nome;
         this.agronomo.logradouro = resposta.logradouro;
         this.agronomo.bairro_localidade = resposta.bairro_localidade;
@@ -45,7 +45,7 @@ export class AgronomoDeleteComponent implements OnInit {
       })
   }
   deleteAgronomo(): void {
-    this.servico.deleteAgronomo(this.agronomo.IDRespTecnico!).subscribe(
+    this.servico.deleteAgronomo(this.agronomo.id!).subscribe(
       (resposta) => {
         this.rota.navigate(['responsavelTecnico']);
         this.servico.mensagem("Responsável Técnico excluído com sucesso")

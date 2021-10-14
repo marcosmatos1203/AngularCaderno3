@@ -14,7 +14,7 @@ import { PomarService } from '../pomar.service';
 export class PomarReadComponent implements OnInit {
 
   produtor:ProdutorModel={
-    IDProdutor: 0,
+    id: 0,
     nome: "",
     logradouro: "",
     bairro_localidade: "",
@@ -27,7 +27,7 @@ export class PomarReadComponent implements OnInit {
   }
   pomares:PomarModel[]=[];
 idParametro:number=0;
-  displayedColumns: string[] = ['id', 'nome', 'bairro_localidade', 'cidade', 'respTecnico', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'bairro_localidade', 'cidade',  'acoes'];
 
   constructor(private servicoProdutor: ProdutorService, private servicoPomar: PomarService, private lblRota: ActivatedRoute, private rota: Router) { }
 
@@ -51,6 +51,6 @@ idParametro:number=0;
       })
   }
   NavegarNovoPomar() {
-    this.rota.navigate(["pomar/create/"+this.produtor.IDProdutor])
+    this.rota.navigate(["pomar/create/"+this.produtor.id])
   }
 }

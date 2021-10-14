@@ -23,7 +23,7 @@ export class PomarService {
     return this.http.get<PomarModel[]>(url);
   }
   getPomaresPorIdProdutor(idProdutor: number):Observable<PomarModel[]>{
-    const url = `${this.baseUrl}pomar/produtor/${idProdutor}`
+    const url = `${this.baseUrl}pomar?produtor=${idProdutor}`
     return this.http.get<PomarModel[]>(url);
   }
   getPomarPorId(id: number): Observable<PomarModel> {

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { ProdutorModel } from '../produtor.model';
 import { ProdutorService } from '../produtor.service';
 

@@ -14,7 +14,7 @@ import { PomarService } from '../pomar.service';
 })
 export class PomarUpdateComponent implements OnInit {
   produtorSelecionado: ProdutorModel = {
-    IDProdutor: 0,
+    id: 0,
     nome: "",
     logradouro: "",
     bairro_localidade: "",
@@ -26,7 +26,7 @@ export class PomarUpdateComponent implements OnInit {
     telefone2: "",
   }
   respTecnicoSelecionado: AgronomoModel = {
-    IDRespTecnico: 0,
+    id: 0,
     nome: "",
     logradouro: "",
     bairro_localidade: "",

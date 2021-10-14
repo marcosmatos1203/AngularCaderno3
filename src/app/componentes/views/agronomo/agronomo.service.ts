@@ -30,8 +30,8 @@ export class AgronomoService {
     return this.http.delete<void>(url);
   }
   updateAgronomo(agronomo:AgronomoModel): Observable<void> {
-    const url = `${this.baseUrl}respTecnico/${agronomo.IDRespTecnico}`
-    return this.http.patch<void>(url,agronomo);
+    const url = `${this.baseUrl}respTecnico/${agronomo.id}`
+    return this.http.put<void>(url,agronomo);
   }
   mensagem(str: string): void {
     this.snack.open(`${str}`, 'OK', {

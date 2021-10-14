@@ -32,10 +32,10 @@
     <form class="example-form" >
         <mat-form-field class="example-full-width" appearance="fill" >
           <mat-label>Responsável Técnico</mat-label>
-          <input type="text" name="respTecnico"  matInput [matAutocomplete]="auto" [formControl]="myFormControl" [(ngModel)]="respTecnicoSelecionado.IDRespTecnico"/>
+          <input type="text" name="respTecnico"  matInput [matAutocomplete]="auto" [formControl]="myFormControl" [(ngModel)]="respTecnicoSelecionado.id"/>
           <mat-autocomplete #auto="matAutocomplete" >
-              <mat-option *ngFor="let option of agronomos" [value]="option.IDRespTecnico">
-                {{option.IDRespTecnico }} - {{ option.nome}}
+              <mat-option *ngFor="let option of agronomos" [value]="option.id">
+                {{option.id }} - {{ option.nome}}
               </mat-option>
           </mat-autocomplete>
         </mat-form-field>

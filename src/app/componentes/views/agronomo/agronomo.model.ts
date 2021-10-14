@@ -1,5 +1,5 @@
 export interface AgronomoModel {
-    IDRespTecnico?: number;
+    id?: number;
     nome: string;
     logradouro: string;
     bairro_localidade: string;

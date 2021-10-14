@@ -15,28 +15,28 @@ export class ProdutorService {
   baseUrl: string = environment.UrlBase;
 
   getProdutores(): Observable<ProdutorModel[]> {
-    const url = `${this.baseUrl}produtores`
+    const url = `${this.baseUrl}produtor`
     return this.http.get<ProdutorModel[]>(url)
   }
   getProdutorPorId(id: number): Observable<ProdutorModel> {
-    const url = `${this.baseUrl}produtores/${id}`
+    const url = `${this.baseUrl}produtor/${id}`
     return this.http.get<ProdutorModel>(url)
   }
   getPomarPorIdProdutor(id: number): Observable<PomarModel[]> {
-    const url = `${this.baseUrl}produtores/${id}`
+    const url = `${this.baseUrl}produtor/${id}`
     return this.http.get<PomarModel[]>(url)
   }
   addProdutor(produtor: ProdutorModel): Observable<ProdutorModel> {
-    const url = `${this.baseUrl}produtores`
+    const url = `${this.baseUrl}produtor`
     return this.http.post<ProdutorModel>(url, produtor);
   }
   deleteProdutor(id: number): Observable<void> {
-    const url = `${this.baseUrl}produtores/${id}`
+    const url = `${this.baseUrl}produtor/${id}`
     return this.http.delete<void>(url);
   }
   updateProdutor(produtor:ProdutorModel): Observable<void> {
-    const url = `${this.baseUrl}produtores/${produtor.IDProdutor}`
-    return this.http.patch<void>(url,produtor);
+    const url = `${this.baseUrl}produtor/${produtor.id}`
+    return this.http.put<void>(url,produtor);
   }
   mensagem(str: string): void {
     this.snack.open(`${str}`, 'OK', {

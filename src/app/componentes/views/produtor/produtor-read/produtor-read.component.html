@@ -10,7 +10,7 @@
 
             <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef> ID </th>
-                <td mat-cell *matCellDef="let row"> {{row.IDProdutor}} </td>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
             </ng-container>
 
             <!-- Name Column -->
@@ -34,12 +34,12 @@
             <ng-container matColumnDef="acoes">
                 <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
                 <td mat-cell *matCellDef="let row">
-                    <a class="edit" routerLink="update/{{row.IDProdutor}}">
+                    <a class="edit" routerLink="update/{{row.id}}">
                         <button mat-icon-button>
                             <mat-icon>edit</mat-icon>
                         </button>
                     </a>
-                    <a class="delete" routerLink="delete/{{row.IDProdutor}}">
+                    <a class="delete" routerLink="delete/{{row.id}}">
                         <button mat-icon-button>
                             <mat-icon>delete</mat-icon>
                         </button>

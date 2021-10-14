@@ -10,7 +10,7 @@ import { ProdutorService } from '../produtor.service';
 })
 export class ProdutorUpdateComponent implements OnInit {
   produtor: ProdutorModel = {
-    IDProdutor: 0,
+    id: 0,
     nome: "",
     logradouro: "",
     bairro_localidade: "",
@@ -24,13 +24,13 @@ export class ProdutorUpdateComponent implements OnInit {
   constructor(private servico: ProdutorService, private rota:Router, private lblrota:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.produtor.IDProdutor=parseInt(this.lblrota.snapshot.paramMap.get('id')!);
+    this.produtor.id=parseInt(this.lblrota.snapshot.paramMap.get('id')!);
     this.getProdutorPorId();
   }
   getProdutorPorId():void{
-    this.servico.getProdutorPorId(this.produtor.IDProdutor!).subscribe(
+    this.servico.getProdutorPorId(this.produtor.id!).subscribe(
       (resposta) => {
-        this.produtor.IDProdutor = resposta.IDProdutor;
+        this.produtor.id = resposta.id;
         this.produtor.nome = resposta.nome;
         this.produtor.logradouro = resposta.logradouro;
         this.produtor.bairro_localidade = resposta.bairro_localidade;
