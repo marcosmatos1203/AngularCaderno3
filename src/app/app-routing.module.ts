@@ -31,7 +31,7 @@ const routes: Routes = [
     component: ProdutorSelectComponent
   },
   {
-    path: 'pomarProdutor/:id',
+    path: 'produtor/pomar/:id',
     component: PomarReadComponent
   },
   {

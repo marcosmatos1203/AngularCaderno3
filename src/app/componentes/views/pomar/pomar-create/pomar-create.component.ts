@@ -2,8 +2,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map, startWith} from 'rxjs/operators';
 import { AgronomoModel } from '../../agronomo/agronomo.model';
 import { AgronomoService } from '../../agronomo/agronomo.service';
 import { ProdutorModel } from '../../produtor/produtor.model';
@@ -57,6 +55,8 @@ export class PomarCreateComponent implements OnInit {
     cidade: "",
     estado: "",
     cep: "",
+    produtorId:this.produtorSelecionado.id!,
+    respTecnicoId:this.respTecnicoSelecionado.id!,
     Produtor: this.produtorSelecionado,
     RespTecnico: this.respTecnicoSelecionado,
   }

@@ -21,6 +21,9 @@ mat-icon{
 .delete{
     color: red;
 }
+.pomar{
+    color: green;
+}
 .mat-header{
-    width: 6rem;
+    width: 9rem;
 }

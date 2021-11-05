@@ -34,6 +34,11 @@
             <ng-container matColumnDef="acoes">
                 <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
                 <td mat-cell *matCellDef="let row">
+                    <a class="quadra" routerLink="quadra/{{row.id}}">
+                        <button mat-icon-button>
+                            <mat-icon>featured_video</mat-icon>
+                        </button>
+                    </a>
                     <a class="edit" routerLink="update/{{row.id}}">
                         <button mat-icon-button>
                             <mat-icon>edit</mat-icon>

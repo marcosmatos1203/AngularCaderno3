@@ -25,6 +25,9 @@ mat-icon{
 .delete{
     color: red;
 }
+.quadra{
+    color: green;
+}
 .mat-header{
-    width: 6rem;
+    width: 9rem;
 }

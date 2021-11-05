@@ -30,6 +30,7 @@ agronomo:AgronomoModel={
       (resposta) => {
         this.rota.navigate(['responsavelTecnico']);
         this.servico.mensagem("Responsável Técnico cadastrado com sucesso");
+        console.log(resposta);
       });
   }
 }

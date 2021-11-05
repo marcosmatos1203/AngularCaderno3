@@ -45,6 +45,8 @@ export class PomarUpdateComponent implements OnInit {
     cidade: "",
     estado: "",
     cep: "",
+    produtorId:this.produtorSelecionado.id!,
+    respTecnicoId:this.respTecnicoSelecionado.id!,
     Produtor: this.produtorSelecionado,
     RespTecnico: this.respTecnicoSelecionado,
   }

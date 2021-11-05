@@ -9,6 +9,8 @@ export interface PomarModel {
     cidade: string;
     estado: string;
     cep: string;
+    produtorId:number;
+    respTecnicoId:number;
     Produtor?:ProdutorModel;
     RespTecnico?: AgronomoModel;
 }
